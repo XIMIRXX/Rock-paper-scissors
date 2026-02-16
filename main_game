@@ -1,0 +1,67 @@
+import random
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+rock_scissors_paper = [scissors, paper, rock]
+def game():
+    user_value = int(input("Write down\n 1 if you want to choose rock\n 2 if you want to choose paper\n 3 if you want to choose scissors\n Enter your choice: "))
+    computer_coice = random.choice(rock_scissors_paper)
+    if user_value == 1:
+        print(rock)
+        if computer_coice == rock:
+            print("Tie")
+            print(rock)
+        elif computer_coice == paper:
+            print("You lost")
+            print(paper)
+        else:
+            print("You win")
+            print(scissors)
+    elif user_value == 2:
+        print(paper)
+        if computer_coice == rock:
+            print("You win")
+            print(rock)
+        elif computer_coice == paper:
+            print("Tie")
+            print(paper)
+        else:
+            print("You lost")
+            print(scissors)
+    elif user_value == 3:
+        print(scissors)
+        if computer_coice == rock:
+            print("You lost")
+            print(rock)
+        elif computer_coice == paper:
+            print("You win")
+            print(paper)
+        else:
+            print("You win")
+            print(scissors)
+    game()
+game()
